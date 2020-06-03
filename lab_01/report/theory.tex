@@ -1,0 +1,122 @@
+\chapter{Теоретическая часть}
+Пусть $\overrightarrow X = \big( x_1, \dots, x_n \big)$~--- выборка из генеральной совокупности $X$.
+
+Тогда:
+\begin{enumerate}[label=\arabic*$\,^\circ$]
+\item Максимальное значение выборки:
+\begin{flalign*}
+    &
+    M_{\max} = \max \{ x_1, \dots, x_n \}
+    &
+\end{flalign*}
+
+\item Минимальное значение выборки:
+\begin{flalign*}
+    &
+    M_{\min} = \min \{ x_1, \dots, x_n \}
+    &
+\end{flalign*}
+
+\item Размах выборки:
+\begin{flalign*}
+    &
+    R = M_{\max} - M_{\min}
+    &
+\end{flalign*}
+
+\item Выборочное среднее:
+\begin{flalign*}
+    &
+    \hat \mu = \overline X = \frac{1}{n} \sum_{i=1}^{n} x_i
+    &
+\end{flalign*}
+
+\item Состоятельная оценка дисперсии:
+\begin{flalign*}
+    &
+    S^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline X){}^2
+    &
+\end{flalign*}
+\end{enumerate}
+
+$\blacksquare{}$
+
+Пусть $\overrightarrow X$~--- выборка из генеральной совокупности $X$,
+
+\begin{equation*}
+    \overrightarrow X = (x_1, \ldots, x_n)
+\end{equation*}
+
+Расположим значения $x_1, \ldots, x_n$ в порядке неубывания
+
+\begin{equation*}
+    x_{(1)} \le x_{(2)} \le \ldots \le x_{(n)}
+\end{equation*}
+где $x_{(i)}$~--- $i$-й элемент полученной последовательности. Такая последовательность называется вариационный ряд.
+
+Если объем $n$ статистической выборки $\vec X$ велик ($n \geq 50$), то можно сгруппировать выборку в интервальный статистический ряд. Для этого отрезок $J = \big[ x_{(1)}, x_{(n)} \big]$ делят на $p = [\log_2n] + 1$ (где $[a]$~--- целая часть числа $a$) равновеликих частей:
+
+\begin{equation*}
+    J_i = \big[ a_{i-1}, a_i \big), i = \overline{1, p-1} \\
+\end{equation*}
+
+\begin{equation*}
+    J_{p} = \big[ a_{p-1}, a_p \big]
+\end{equation*}
+где
+\begin{equation*}
+    a_i = x_{(1)} + i\Delta, i = \overline{0, p}
+\end{equation*}
+
+\begin{equation*}
+    \Delta = \frac{|J|}{p} = \frac{x_{(n)} - x_{(1)}}{p}
+\end{equation*}
+
+Интервальным статистическим рядом называют таблицу
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccccc}
+        \toprule
+        $J_1$ & $\dots$ & $J_i$ & $\dots$ & $J_p$ \\
+        \midrule
+        $n_1$ & $\dots$ & $n_i$ & $\dots$ & $n_p$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+где $n_i$~--- количество элементов $\overrightarrow X$, которые $\in J_i$.
+
+Предположим, что для выборки $\overrightarrow X$ построен интервальный статистический
+ряд
+
+\begin{equation*}
+    \big( J_i, n_i \big), i = \overline{1; p}
+\end{equation*}
+
+\textbf{Эмпирической плотностью} (отвечающей выборке $\overrightarrow X$) называют функцию
+\begin{equation*}
+    \hat f_n(x) =
+    \begin{cases}
+        \frac{n_i}{n \Delta}, x \in J_i, i = \overline{1; p} \\
+        0, \text{ иначе} \\
+    \end{cases}
+\end{equation*}
+
+\textbf{Гистограммой} называют график эмпирической плотности.
+
+$\blacksquare{}$
+
+Для выборки $\overrightarrow X$ обозначим $n(x, \overrightarrow X)$~--- число элементов вектора $\overrightarrow X$, которые имеют значения меньше $x$.
+
+\textbf{Эмпирической функцией распределения} называют функцию
+\begin{equation*}
+    F_n : \mathbb{R} \to \mathbb{R}
+\end{equation*}
+определенную условием
+
+\begin{equation*}
+    F_n(x) = \frac{n(x, \overrightarrow X)}{n}
+\end{equation*}
+
+$\blacksquare{}$
+
