@@ -1,4 +1,4 @@
-function lab_02()
+function lab2()
     X = [
         -13.40, -12.63, -13.65, -14.23, -13.39, -12.36, ...
         -13.52, -13.44, -13.87, -11.82, -12.01, -11.40, ...
@@ -22,13 +22,19 @@ function lab_02()
         -12.58, -13.98, -11.46, -11.82, -12.33, -11.47, ...
     ];
 
+    % Уровень доверия
     gamma = 0.9;
 
+    % Объём выборки
     n = length(X);
+    % Оценка мат. ожидания
     M = mean(X);
+    % Оценка дисперсии
     D = var(X);
 
+    % Границы доверительного интервала для мат. ожидания
     [M_lo, M_hi] = mean_bounds(X, gamma);
+    % Границы доверительного интервала для дисперсии
     [D_lo, D_hi] = var_bounds(X, gamma);
 
     fprintf('mean     = %9.5f\n', M);
@@ -37,6 +43,7 @@ function lab_02()
     fprintf('mean     in (%9.5f, %9.5f)\n', M_lo, M_hi);
     fprintf('variance in (%9.5f, %9.5f)\n', D_lo, D_hi);
 
+    % Создание массивов точечных оценок и границ дов. интервалов
     M_pe    = zeros(1, n);
     D_pe    = zeros(1, n);
     M_pe_lo = zeros(1, n);
@@ -44,6 +51,7 @@ function lab_02()
     D_pe_lo = zeros(1, n);
     D_pe_hi = zeros(1, n);
 
+    % Заполнение созданных массивов
     for i = 1 : n
         M_pe(i) = mean(X(1:i));
         D_pe(i) = var(X(1:i));
@@ -52,6 +60,7 @@ function lab_02()
         [D_pe_lo(i), D_pe_hi(i)] = var_bounds(X(1:i), gamma);
     end
 
+    % Построение графиков
     subplot(2, 1, 1);
     plot(1 : n, [(zeros(1, n) + M)', M_pe', M_pe_lo', M_pe_hi']);
     xlabel('n');
@@ -72,6 +81,7 @@ function lab_02()
            'Interpreter', 'latex', 'FontSize', 14);
 end
 
+% Границы доверительного интервала для мат. ожидания
 function [lo, hi] = mean_bounds(X, gamma)
     n = length(X);
     M = mean(X);
@@ -84,6 +94,7 @@ function [lo, hi] = mean_bounds(X, gamma)
     hi = M + interval;
 end
 
+% Границы доверительного интервала для дисперсии
 function [lo, hi] = var_bounds(X, gamma)
     n = length(X);
     D = var(X);
