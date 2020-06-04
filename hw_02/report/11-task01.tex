@@ -1,0 +1,52 @@
+\section*{Задача \textnumero1\\\textit{Проверка параметрических гипотез}}
+
+\subsection*{Условие}
+Расстояние между двумя подвижными объектами определяется с помощью гамма-дальномера, точность которого характеризуется средним квадратичным отклонением $\sigma = 10$м. С интервалом 12 минут проведено 2 серии измерений, в результате чего получены значения $\overline{x}_{n_1} = 832$м, $n_1 = 5$, $\overline{y}_{n_2} = 840$м, $n_2 = 3$. Предполагая, что ошибка измерений подчиняется нормальному закону, при уровне значимости $\alpha = 0.05$ проверить гипотезу о том, что за указанное время расстояние между объектами не увеличилось.
+
+\subsection*{Решение}
+Пусть случайная величина $X$~--- результат первой серии измерений, а $Y$~--- второй. По условию $X \sim N(m_1, \sigma),\ Y \sim N(m_2, \sigma)$, где $\sigma = 10,\ m_1 = MX,\ m_2 = MY$.
+
+Введём две гипотезы:
+\begin{equation*}
+    H_0 = \big\{\text{Расстояние не изменилось}\big\} = \big\{m_1 = m_2\big\}
+\end{equation*}
+\begin{equation*}
+    H_1 = \big\{\text{Расстояние изменилось}\big\} = \big\{m_1 \ne m_2\big\}
+\end{equation*}
+
+Гипотеза $H_0$ является основной, тогда как $H_1$~--- конкурирующей. Для рассматриваемого случая используем статистику
+\begin{equation*}
+    T(\overrightarrow{X}_{n_1}, \overrightarrow{Y}_{n_2}) = \frac{\overline{X} - \overline{Y}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}} \sim N(0, 1)
+\end{equation*}
+
+Так же имеем определяющее критическую область условие
+\begin{equation*}
+    W = \Big\{\big(\vec x, \vec y\big):\ \Big|T\big(\overrightarrow{X}_{n_1}, \overrightarrow{Y}_{n_2}\big)\Big| \geqslant t_{1 - \frac{\alpha}{2}}\Big\}
+\end{equation*}
+
+Тогда
+\begin{flalign*}
+    &
+    t_{1 - \frac{\alpha}{2}} = t_{0.975} = 1.960
+    \\ &
+    T(\vec x, \vec y) = \frac{832 - 840}{\sqrt{\frac{100}{5} + \frac{100}{3}}} = -\frac{8}{\sqrt{\frac{800}{15}}} \approx -1.0954
+    &
+\end{flalign*}
+
+\sloppy Таким образом, $\big|-1.0954\big| \ngeqslant 1.96 \Rightarrow$ условие не выполнено, принимается гипотеза $H_0$, а следовательно:
+\newline
+\underline{\underline{За указанное время расстояние между объектами не увеличилось}}.
+
+
+
+%Условие данной задачи описывает схему испытаний Бернули. При этом $n = 100$~--- число испытаний. Очевидно, что $n \gg 1$. Тогда по интегральной теореме Муавра-Лапласа имеем:
+%\begin{equation*}
+    %P\Big\{k_1 \leqslant{} k \leqslant k_2\Big\} \approx \Phi(x_2) - \Phi(x_1)
+%\end{equation*}
+%где, $k$~--- число успехов; $x_i = \frac{k_i - np}{\sqrt{npq}}, i = \overline{1,2}$; $p = 0.9$~--- вероятность успеха, $q = 1 - p = 0.1$~--- вероятность неудачи.
+%\begin{flalign*}
+    %&
+    %P\Big\{x \in [85, 95]\Big\} = \Phi\bigg(\frac{95-90}{3}\bigg) - \Phi\bigg(\frac{85-90}{3}\bigg) \approx 2\cdot\Phi(1.67) \approx \underline{\underline{0.905}}
+    %&
+%\end{flalign*}
+
