@@ -4,7 +4,7 @@
 
 В листинге~\ref{lst:programm} приведён текст программы.
 \begin{lstlisting}[caption={Текст программы},label={lst:programm}]
-function lab_01()
+function lab1()
     X = [
         -13.40, -12.63, -13.65, -14.23, -13.39, -12.36, ...
         -13.52, -13.44, -13.87, -11.82, -12.01, -11.40, ...
@@ -29,12 +29,17 @@ function lab_01()
     ];
     X = sort(X);
 
+    % Максимальное значение выборки
     M_max = max(X);
+    % Минимальное значение выборки
     M_min = min(X);
 
+    % Разброс выборки
     R = M_max - M_min;
 
+    % Оценка мат. ожидания
     M = mean(X);
+    % Оценка дисперсии
     D = var(X);
 
     fprintf('M_max    = %9.5f\n', M_max);
@@ -45,13 +50,18 @@ function lab_01()
     fprintf('\n');
 
     m = floor(log2(length(X))) + 2;
+    % Группировка значений в m интервалов
     [N, edges] = histcounts(X, m, 'BinLimits', [M_min, M_max]);
 
+    % Вывод всех интервалов, кроме последнего,
+    % потому что последний - это отрезок,
+    % а все остальные - полуинтервалы
     fprintf('%d intervals:\n', m);
     for i = 1 : (length(N) - 1)
         fprintf('%3d values in [%f,%f)\n', ...
                 N(i), edges(i), edges(i + 1));
     end
+    % Вывод последнего отрезка
     fprintf('%3d values in [%f,%f]\n', ...
             N(end), edges(end - 1), edges(end));
 
@@ -59,16 +69,20 @@ function lab_01()
     F = normcdf(X, M, sqrt(D));
 
     subplot(2, 1, 1);
+    % Построение гистограммы
     histogram(X, m, 'Normalization', 'pdf', ...
               'BinLimits', [M_min, M_max]);
     hold on;
+    % Построение графика функции плотности распределения
     plot(X, f, 'LineWidth', 2);
     hold off;
 
     subplot(2, 1, 2);
+    % Построение графика эмпирической функции распределения
     [YY, XX] = ecdf(X);
     stairs(XX, YY, 'LineWidth', 2);
     hold on;
+    % Построение графика функции распределения
     plot(X, F, 'LineWidth', 2);
     hold off;
 end
