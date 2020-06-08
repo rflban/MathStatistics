@@ -16,13 +16,13 @@ width=7.266in,
 height=6.376in,
 at={(1.219in,0.861in)},
 scale only axis,
-unbounded coords=jump,
-xmin=0,
+xmin=10,
 xmax=120,
 xlabel style={font=\color{white!15!black}},
 xlabel={n},
-ymin=0,
-ymax=80,
+ymin=0.2,
+ymax=2,
+xtick={10, 20, ..., 120},
 ylabel style={font=\color{white!15!black}},
 ylabel={z},
 axis background/.style={fill=white},
@@ -30,15 +30,6 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 ]
 \addplot [color=mycolor1]
   table[row sep=crcr]{%
-1	0.865332745098039\\
-2	0.865332745098039\\
-3	0.865332745098039\\
-4	0.865332745098039\\
-5	0.865332745098039\\
-6	0.865332745098039\\
-7	0.865332745098039\\
-8	0.865332745098039\\
-9	0.865332745098039\\
 10	0.865332745098039\\
 11	0.865332745098039\\
 12	0.865332745098039\\
@@ -155,15 +146,6 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 
 \addplot [color=mycolor2]
   table[row sep=crcr]{%
-1	0\\
-2	0.29645\\
-3	0.282633333333333\\
-4	0.440091666666666\\
-5	0.3316\\
-6	0.466946666666667\\
-7	0.397580952380953\\
-8	0.34285\\
-9	0.332694444444444\\
 10	0.541521111111111\\
 11	0.6229\\
 12	0.81280606060606\\
@@ -280,15 +262,6 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 
 \addplot [color=mycolor3]
   table[row sep=crcr]{%
-1	nan\\
-2	0.0771712033988257\\
-3	0.0943453244565245\\
-4	0.168947021104948\\
-5	0.139801631650518\\
-6	0.210896871845312\\
-7	0.189450755342296\\
-8	0.170606812993935\\
-9	0.171632283811337\\
 10	0.288060550341353\\
 11	0.340251655230794\\
 12	0.45442460738269\\
@@ -405,15 +378,6 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 
 \addplot [color=mycolor4]
   table[row sep=crcr]{%
-1	nan\\
-2	75.3915170870131\\
-3	5.51014195340768\\
-4	3.7524195462544\\
-5	1.86626851820871\\
-6	2.03822068080829\\
-7	1.45867106875059\\
-8	1.10732004541771\\
-9	0.97398804037434\\
 10	1.46572168525412\\
 11	1.58084444475329\\
 12	1.95436764555008\\
