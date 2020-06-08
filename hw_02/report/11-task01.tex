@@ -8,32 +8,32 @@
 
 Введём две гипотезы:
 \begin{equation*}
-    H_0 = \big\{\text{Расстояние не изменилось}\big\} = \big\{m_1 = m_2\big\}
+    H_0 = \big\{\text{Расстояние не изменилось}\big\} = \big\{m_2 = m_1\big\}
 \end{equation*}
 \begin{equation*}
-    H_1 = \big\{\text{Расстояние изменилось}\big\} = \big\{m_1 \ne m_2\big\}
+    H_1 = \big\{\text{Расстояние увеличилось}\big\} = \big\{m_2 > m_1\big\}
 \end{equation*}
 
 Гипотеза $H_0$ является основной, тогда как $H_1$~--- конкурирующей. Для рассматриваемого случая используем статистику
 \begin{equation*}
-    T(\overrightarrow{X}_{n_1}, \overrightarrow{Y}_{n_2}) = \frac{\overline{X} - \overline{Y}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}} \sim N(0, 1)
+    T(\overrightarrow{Y}_{n_2}, \overrightarrow{X}_{n_1}) = \frac{\overline{Y} - \overline{X}}{\sqrt{\frac{\sigma_2^2}{n_2} + \frac{\sigma_1^2}{n_1}}} \sim N(0, 1)
 \end{equation*}
 
-Так же имеем определяющее критическую область условие
+Так же имеем определяющее критическую область условие:
 \begin{equation*}
-    W = \Big\{\big(\vec x, \vec y\big):\ \Big|T\big(\overrightarrow{X}_{n_1}, \overrightarrow{Y}_{n_2}\big)\Big| \geqslant t_{1 - \frac{\alpha}{2}}\Big\}
+    W = \Big\{\big(\vec y, \vec x\big):\ T\big(\overrightarrow{Y}_{n_2}, \overrightarrow{X}_{n_1}\big) \geqslant t_{1 - \alpha}\Big\}
 \end{equation*}
 
 Тогда
 \begin{flalign*}
     &
-    t_{1 - \frac{\alpha}{2}} = t_{0.975} = 1.960
+    t_{1 - \alpha} = t_{0.95} = 1.645
     \\ &
-    T(\vec x, \vec y) = \frac{832 - 840}{\sqrt{\frac{100}{5} + \frac{100}{3}}} = -\frac{8}{\sqrt{\frac{800}{15}}} \approx -1.0954
+    T(\vec x, \vec y) = \frac{840 - 832}{\sqrt{\frac{100}{3} + \frac{100}{5}}} = \frac{8}{\sqrt{\frac{800}{15}}} \approx 1.0954
     &
 \end{flalign*}
 
-\sloppy Таким образом, $\big|-1.0954\big| \ngeqslant 1.96 \Rightarrow$ условие не выполнено, принимается гипотеза $H_0$, а следовательно:
+\sloppy Таким образом, $1.0954 \ngeqslant 1.645 \Rightarrow$ условие не выполнено, принимается гипотеза $H_0$, а следовательно:
 \newline
 \underline{\underline{За указанное время расстояние между объектами не увеличилось}}.
 
