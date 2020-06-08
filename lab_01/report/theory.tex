@@ -1,5 +1,5 @@
 \chapter{Теоретическая часть}
-Пусть $\overrightarrow X = \big( x_1, \dots, x_n \big)$~--- выборка из генеральной совокупности $X$.
+Пусть $\vec x = \big( x_1, \dots, x_n \big)$~--- выборка из генеральной совокупности $X$.
 
 Тогда:
 \begin{enumerate}[label=\arabic*$\,^\circ$]
@@ -27,24 +27,24 @@
 \item Выборочное среднее:
 \begin{flalign*}
     &
-    \hat \mu = \overline X = \frac{1}{n} \sum_{i=1}^{n} x_i
+    \hat \mu = \overline x = \frac{1}{n} \sum_{i=1}^{n} x_i
     &
 \end{flalign*}
 
 \item Состоятельная оценка дисперсии:
 \begin{flalign*}
     &
-    S^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline X){}^2
+    S^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline x){}^2
     &
 \end{flalign*}
 \end{enumerate}
 
 $\blacksquare{}$
 
-Пусть $\overrightarrow X$~--- выборка из генеральной совокупности $X$,
+Пусть $\vec x$~--- выборка из генеральной совокупности $X$,
 
 \begin{equation*}
-    \overrightarrow X = (x_1, \ldots, x_n)
+    \vec x = (x_1, \ldots, x_n)
 \end{equation*}
 
 Расположим значения $x_1, \ldots, x_n$ в порядке неубывания
@@ -52,9 +52,9 @@ $\blacksquare{}$
 \begin{equation*}
     x_{(1)} \le x_{(2)} \le \ldots \le x_{(n)}
 \end{equation*}
-где $x_{(i)}$~--- $i$-й элемент полученной последовательности. Такая последовательность называется вариационный ряд.
+где $x_{(i)}$~--- $i$-й элемент полученной последовательности. Такая последовательность называется вариационным рядом.
 
-Если объем $n$ статистической выборки $\vec X$ велик ($n \geq 50$), то можно сгруппировать выборку в интервальный статистический ряд. Для этого отрезок $J = \big[ x_{(1)}, x_{(n)} \big]$ делят на $p = [\log_2n] + 1$ (где $[a]$~--- целая часть числа $a$) равновеликих частей:
+Если объем $n$ статистической выборки $\vec x$ велик ($n \geq 50$), то можно сгруппировать выборку в интервальный статистический ряд. Для этого отрезок $J = \big[ x_{(1)}, x_{(n)} \big]$ делят на $p = [\log_2n] + 1$ (где $[a]$~--- целая часть числа $a$) равновеликих частей:
 
 \begin{equation*}
     J_i = \big[ a_{i-1}, a_i \big), i = \overline{1, p-1} \\
@@ -84,16 +84,16 @@ $\blacksquare{}$
         \bottomrule
     \end{tabular}
 \end{table}
-где $n_i$~--- количество элементов $\overrightarrow X$, которые $\in J_i$.
+где $n_i$~--- количество элементов $\vec x$, которые $\in J_i$.
 
-Предположим, что для выборки $\overrightarrow X$ построен интервальный статистический
+Предположим, что для выборки $\vec x$ построен интервальный статистический
 ряд
 
 \begin{equation*}
     \big( J_i, n_i \big), i = \overline{1; p}
 \end{equation*}
 
-\textbf{Эмпирической плотностью} (отвечающей выборке $\overrightarrow X$) называют функцию
+\textbf{Эмпирической плотностью} (отвечающей выборке $\vec x$) называют функцию
 \begin{equation*}
     \hat f_n(x) =
     \begin{cases}
@@ -106,7 +106,7 @@ $\blacksquare{}$
 
 $\blacksquare{}$
 
-Для выборки $\overrightarrow X$ обозначим $n(x, \overrightarrow X)$~--- число элементов вектора $\overrightarrow X$, которые имеют значения меньше $x$.
+Для выборки $\vec x$ обозначим $n(x, \vec x)$~--- число элементов вектора $\vec x$, которые имеют значения меньше $x$.
 
 \textbf{Эмпирической функцией распределения} называют функцию
 \begin{equation*}
@@ -115,7 +115,7 @@ $\blacksquare{}$
 определенную условием
 
 \begin{equation*}
-    F_n(x) = \frac{n(x, \overrightarrow X)}{n}
+    F_n(x) = \frac{n(x, \vec x)}{n}
 \end{equation*}
 
 $\blacksquare{}$
