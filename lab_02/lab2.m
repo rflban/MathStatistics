@@ -61,16 +61,16 @@ function lab2()
     end
 
     % Построение графиков
-    %subplot(2, 1, 1);
-    %plot(1 : n, [(zeros(1, n) + M)', M_pe', M_pe_lo', M_pe_hi']);
-    %xlabel('n');
-    %ylabel('y');
-    %legend('$\hat \mu(\vec x_N)$', '$\hat \mu(\vec x_n)$', ...
-           %'$\underline{\mu}(\vec x_n)$', ...
-           %'$\overline{\mu}(\vec x_n)$', ...
-           %'Interpreter', 'latex', 'FontSize', 14);
+    subplot(2, 1, 1);
+    plot(1 : n, [(zeros(1, n) + M)', M_pe', M_pe_lo', M_pe_hi']);
+    xlabel('n');
+    ylabel('y');
+    legend('$\hat \mu(\vec x_N)$', '$\hat \mu(\vec x_n)$', ...
+           '$\underline{\mu}(\vec x_n)$', ...
+           '$\overline{\mu}(\vec x_n)$', ...
+           'Interpreter', 'latex', 'FontSize', 14);
 
-    %subplot(2, 1, 2);
+    subplot(2, 1, 2);
     D_seq = (zeros(1, n) + D);
     D_seq = D_seq(10:end);
     D_pe = D_pe(10:end);
